@@ -1,3 +1,7 @@
+# Force Chroma to use DuckDB before importing chromadb
+import os
+os.environ["CHROMA_DB_IMPL"] = "duckdb+parquet"  # tells Chroma to use DuckDB
+
 from typing import List, Dict, Any, Optional
 import chromadb
 from chromadb.config import Settings as ChromaSettings
@@ -8,25 +12,23 @@ class VectorStore:
     def __init__(self, persist_dir: Optional[str] = None, collection_name: Optional[str] = None, embedding_model: Optional[str] = None):
         self.persist_dir = persist_dir or SETTINGS.persist_dir
         self.collection_name = collection_name or SETTINGS.collection_name
-        
-        # Use DuckDB storage instead of SQLite
+
+        # Use DuckDB storage
         self.client = chromadb.Client(ChromaSettings(
-            chroma_db_impl="duckdb+parquet",  # avoids SQLite issues
+            chroma_db_impl="duckdb+parquet",
             persist_directory=self.persist_dir
         ))
         
         self.collection = self.client.get_or_create_collection(
-            name=self.collection_name, 
+            name=self.collection_name,
             metadata={"hnsw:space": "cosine"}
         )
-        
+
         model_name = embedding_model or SETTINGS.embedding_model
         self.embedder = SentenceTransformer(model_name)
 
     def embed(self, texts: List[str]) -> List[List[float]]:
-        return self.embedder.encode(
-            texts, show_progress_bar=False, normalize_embeddings=True
-        ).tolist()
+        return self.embedder.encode(texts, show_progress_bar=False, normalize_embeddings=True).tolist()
 
     def add(self, ids: List[str], texts: List[str], metadatas: List[Dict[str, Any]]):
         self.collection.add(
