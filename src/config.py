@@ -1,4 +1,4 @@
-
+import streamlit as st
 import os
 from dataclasses import dataclass
 from dotenv import load_dotenv
@@ -15,7 +15,8 @@ class Settings:
     chunk_overlap: int = int(os.getenv("CHUNK_OVERLAP", "150"))
     use_openai: bool = bool(os.getenv("OPENAI_API_KEY", ""))
     ocr_language: str = os.getenv("OCR_LANGUAGE", "eng")
-    openrouter_api_key: str = os.getenv("OPENROUTER_API_KEY", "")
+    openrouter_api_key = st.secrets["OPENROUTER_API_KEY"]
+    os.environ["OPENROUTER_API_KEY"] = openrouter_api_key
     openrouter_model: str = os.getenv("OPENROUTER_MODEL", "mistralai/mistral-7b-instruct:free")
 
 SETTINGS = Settings()
