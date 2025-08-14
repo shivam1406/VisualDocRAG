@@ -1,0 +1,23 @@
+
+# Core
+streamlit>=1.34.0
+chromadb>=0.5.4
+sentence-transformers>=3.0.1
+numpy
+pandas
+scikit-learn
+tqdm
+python-dotenv
+
+# PDF & OCR
+pdfplumber
+pymupdf>=1.24.7
+pillow
+pytesseract
+opencv-python-headless
+
+# LLM (optional)
+openai>=1.40.0
+
+# Utils
+rapidfuzz

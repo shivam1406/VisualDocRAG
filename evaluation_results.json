@@ -1,0 +1,214 @@
+[
+  {
+    "query": "What was the revenue in Q3?",
+    "predicted_answer": "The revenue in Q3 was 17000 dollars, as stated in the table on page 1 of the provided context.",
+    "contexts": [
+      {
+        "text": "Quarter Revenue ($) Profit %\nQ1 12000 15%\nQ2 15000 18%\nQ3 17000 20%\nQ4 16000 17%",
+        "metadata": {
+          "source": "pdf_table",
+          "page": 1,
+          "modality": "table"
+        },
+        "score": 0.8452543020248413
+      },
+      {
+        "text": "This chart shows company growth per quarter. Q3 had the highest performance.",
+        "metadata": {
+          "page": 1,
+          "modality": "text",
+          "source": "pdf_text"
+        },
+        "score": 0.8377362191677094
+      },
+      {
+        "text": "Quarterly Financial Report This report provides an overview of quarterly revenue and profit margins for the fiscal year 2024. Quarter Revenue ($) Profit % Q1 12000 15% Q2 15000 18% Q3 17000 20% Q4 16000 17%",
+        "metadata": {
+          "modality": "text",
+          "source": "pdf_text",
+          "page": 1
+        },
+        "score": 0.8077730536460876
+      },
+      {
+        "text": "Invoice Invoice No: INV-001 Date: 2024-10-05 Item: Laptop Amount: $1200 Total Amount Due: $1200",
+        "metadata": {
+          "page": 1,
+          "modality": "text",
+          "source": "pdf_ocr_full"
+        },
+        "score": 0.6480507552623749
+      },
+      {
+        "text": "” ” ” ”",
+        "metadata": {
+          "modality": "image_ocr",
+          "page": 1,
+          "source": "pdf_image_ocr"
+        },
+        "score": 0.5810660123825073
+      }
+    ],
+    "gold_answer": "17000",
+    "latency_ms": 2755.73
+  },
+  {
+    "query": "What is the total amount due?",
+    "predicted_answer": "The total amount due is $1200, as stated in the invoice on page 1 of the provided context (text).",
+    "contexts": [
+      {
+        "text": "Invoice Invoice No: INV-001 Date: 2024-10-05 Item: Laptop Amount: $1200 Total Amount Due: $1200",
+        "metadata": {
+          "page": 1,
+          "source": "pdf_ocr_full",
+          "modality": "text"
+        },
+        "score": 0.7595904767513275
+      },
+      {
+        "text": "Quarter Revenue ($) Profit %\nQ1 12000 15%\nQ2 15000 18%\nQ3 17000 20%\nQ4 16000 17%",
+        "metadata": {
+          "source": "pdf_table",
+          "page": 1,
+          "modality": "table"
+        },
+        "score": 0.6863340735435486
+      },
+      {
+        "text": "Quarterly Financial Report This report provides an overview of quarterly revenue and profit margins for the fiscal year 2024. Quarter Revenue ($) Profit % Q1 12000 15% Q2 15000 18% Q3 17000 20% Q4 16000 17%",
+        "metadata": {
+          "source": "pdf_text",
+          "page": 1,
+          "modality": "text"
+        },
+        "score": 0.6524505019187927
+      },
+      {
+        "text": "This chart shows company growth per quarter. Q3 had the highest performance.",
+        "metadata": {
+          "source": "pdf_text",
+          "page": 1,
+          "modality": "text"
+        },
+        "score": 0.5963725745677948
+      },
+      {
+        "text": "” ” ” ”",
+        "metadata": {
+          "modality": "image_ocr",
+          "page": 1,
+          "source": "pdf_image_ocr"
+        },
+        "score": 0.5864510834217072
+      }
+    ],
+    "gold_answer": "$1200",
+    "latency_ms": 3106.71
+  },
+  {
+    "query": "Which quarter had the highest growth?",
+    "predicted_answer": "The quarter with the highest growth, according to the provided chart and report on page 1, is Q3 with a profit of $17,000 and a profit percentage of 20%.",
+    "contexts": [
+      {
+        "text": "This chart shows company growth per quarter. Q3 had the highest performance.",
+        "metadata": {
+          "source": "pdf_text",
+          "modality": "text",
+          "page": 1
+        },
+        "score": 0.7858573496341705
+      },
+      {
+        "text": "Quarter Revenue ($) Profit %\nQ1 12000 15%\nQ2 15000 18%\nQ3 17000 20%\nQ4 16000 17%",
+        "metadata": {
+          "modality": "table",
+          "page": 1,
+          "source": "pdf_table"
+        },
+        "score": 0.7150738835334778
+      },
+      {
+        "text": "Quarterly Financial Report This report provides an overview of quarterly revenue and profit margins for the fiscal year 2024. Quarter Revenue ($) Profit % Q1 12000 15% Q2 15000 18% Q3 17000 20% Q4 16000 17%",
+        "metadata": {
+          "modality": "text",
+          "page": 1,
+          "source": "pdf_text"
+        },
+        "score": 0.6780775785446167
+      },
+      {
+        "text": "Invoice Invoice No: INV-001 Date: 2024-10-05 Item: Laptop Amount: $1200 Total Amount Due: $1200",
+        "metadata": {
+          "page": 1,
+          "modality": "text",
+          "source": "pdf_ocr_full"
+        },
+        "score": 0.5468403995037079
+      },
+      {
+        "text": "Levee me tee med fate rere ws Van Laptag seme Suree Fatal Ane mee Stee",
+        "metadata": {
+          "page": 1,
+          "source": "pdf_image_ocr",
+          "modality": "image_ocr"
+        },
+        "score": 0.4954640865325928
+      }
+    ],
+    "gold_answer": "Q3",
+    "latency_ms": 3200.78
+  },
+  {
+    "query": "List all bullet points in the flyer.",
+    "predicted_answer": "Based on the provided context, the information in the form of bullet points is not presented in the provided context. The context only contains a chart and a table, which do not have bullet points. The text provides information about company growth per quarter and a specific invoice, but it does not contain bullet points.",
+    "contexts": [
+      {
+        "text": "” ” ” ”",
+        "metadata": {
+          "page": 1,
+          "source": "pdf_image_ocr",
+          "modality": "image_ocr"
+        },
+        "score": 0.6017618775367737
+      },
+      {
+        "text": "This chart shows company growth per quarter. Q3 had the highest performance.",
+        "metadata": {
+          "modality": "text",
+          "source": "pdf_text",
+          "page": 1
+        },
+        "score": 0.566707968711853
+      },
+      {
+        "text": "Invoice Invoice No: INV-001 Date: 2024-10-05 Item: Laptop Amount: $1200 Total Amount Due: $1200",
+        "metadata": {
+          "source": "pdf_ocr_full",
+          "page": 1,
+          "modality": "text"
+        },
+        "score": 0.5661265850067139
+      },
+      {
+        "text": "Quarterly Financial Report This report provides an overview of quarterly revenue and profit margins for the fiscal year 2024. Quarter Revenue ($) Profit % Q1 12000 15% Q2 15000 18% Q3 17000 20% Q4 16000 17%",
+        "metadata": {
+          "page": 1,
+          "source": "pdf_text",
+          "modality": "text"
+        },
+        "score": 0.5661076307296753
+      },
+      {
+        "text": "Quarter Revenue ($) Profit %\nQ1 12000 15%\nQ2 15000 18%\nQ3 17000 20%\nQ4 16000 17%",
+        "metadata": {
+          "page": 1,
+          "modality": "table",
+          "source": "pdf_table"
+        },
+        "score": 0.5574580430984497
+      }
+    ],
+    "gold_answer": "- AI and Machine Learning Talks; - Cloud Computing Workshops; - Networking Opportunities",
+    "latency_ms": 2653.4
+  }
+]
