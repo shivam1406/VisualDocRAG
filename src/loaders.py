@@ -2,7 +2,6 @@
 from typing import List, Dict, Any, Tuple
 from dataclasses import dataclass
 import io, fitz, pdfplumber, pytesseract, cv2, numpy as np
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 from PIL import Image
 from .utils import clean_text
 
