@@ -1,4 +1,4 @@
-# 📄 VisualDocRAG — Retrieval-Augmented Generation for Visual Documents
+# 📄 VisualDocRAG — Retrieval-Augmented Generation for Visual Documents - Check at(https://visualdocrag.streamlit.app/)
 
 VisualDocRAG is a Retrieval-Augmented Generation (RAG) pipeline that processes **PDFs, scanned images, and charts**, extracts text via OCR or native text extraction, and enables question answering using a vector database.
 
