@@ -1,7 +1,3 @@
-# Force Chroma to use DuckDB before importing chromadb
-import os
-os.environ["CHROMA_DB_IMPL"] = "duckdb+parquet"  # tells Chroma to use DuckDB
-
 from typing import List, Dict, Any, Optional
 import chromadb
 from chromadb.config import Settings as ChromaSettings
