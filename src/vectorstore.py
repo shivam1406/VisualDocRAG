@@ -8,18 +8,8 @@ class VectorStore:
     def __init__(self, persist_dir: Optional[str] = None, collection_name: Optional[str] = None, embedding_model: Optional[str] = None):
         self.persist_dir = persist_dir or SETTINGS.persist_dir
         self.collection_name = collection_name or SETTINGS.collection_name
-
-        # Use DuckDB storage
-        self.client = chromadb.Client(ChromaSettings(
-            chroma_db_impl="duckdb+parquet",
-            persist_directory=self.persist_dir
-        ))
-        
-        self.collection = self.client.get_or_create_collection(
-            name=self.collection_name,
-            metadata={"hnsw:space": "cosine"}
-        )
-
+        self.client = chromadb.PersistentClient(path=self.persist_dir)
+        self.collection = self.client.get_or_create_collection(self.collection_name, metadata={"hnsw:space": "cosine"})
         model_name = embedding_model or SETTINGS.embedding_model
         self.embedder = SentenceTransformer(model_name)
 
