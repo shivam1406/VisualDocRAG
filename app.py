@@ -1,3 +1,5 @@
+import os
+os.environ["CHROMA_DB_IMPL"] = "duckdb+parquet"  # Force Chroma to use DuckDB
 
 import streamlit as st
 from src.pipeline import VisualDocRAG
